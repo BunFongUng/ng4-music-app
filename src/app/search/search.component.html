@@ -2,7 +2,7 @@
 
 <p>
   <input type="text" #newQuery [value]="query" (keydown.enter)="submit(newQuery.value)">
-  <button type="button" (click)="submit(newQuery.value)"></button>
+  <button type="button" (click)="submit(newQuery.value)">Search</button>
 </p>
 
 <div *ngIf="results">

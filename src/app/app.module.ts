@@ -11,6 +11,8 @@ import { ArtistComponent } from './artist/artist.component';
 import { TrackComponent } from './track/track.component';
 import { SearchComponent } from './search/search.component';
 
+import { SpotifyServiceService } from './_services/spotify-service.service';
+
 const routes: Routes = [
   { path: '', redirectTo: 'search', pathMatch: 'full' },
   { path: 'search', component: SearchComponent },
@@ -31,9 +33,11 @@ const routes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
+    RouterModule.forRoot(routes, { enableTracing: true})
   ],
   providers: [
-    { provide: LocationStrategy, useClass: HashLocationStrategy }
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+    SpotifyServiceService
   ],
   bootstrap: [AppComponent]
 })
